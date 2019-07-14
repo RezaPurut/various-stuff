@@ -1,5 +1,6 @@
 use Socket;
-$| = 1;
+
+$| = 1;
 $proto = getprotobyname('tcp');
 $port = 5000;
 $addr = sockaddr_in($port, INADDR_ANY);
@@ -26,10 +27,10 @@ while(1)
 	$count = 1;
 	while($line = <$client>)
 	{
-		print "$count -> "."$line \n";		send($client, "$count -> "."$line \n", 0);
-		$count++;	}
-	
+		print "$count -> "."$line \n";
+		send($client, "$count -> "."$line \n", 0);
+		$count++;
+	}
+	
+
 }
-
-
-
